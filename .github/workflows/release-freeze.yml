@@ -35,7 +35,7 @@ on:
 
 jobs:
   code-freeze:
-    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_code_freeze.yml@v0.86.0
+    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_code_freeze.yml@d37760ed20154a1d6f0d6aa0cb84a67f76ed6d38  # v0.86.0
     with:
       library-name: NeMo-Automodel
       python-package: nemo_automodel
@@ -57,7 +57,7 @@ jobs:
       DRY_RUN: ${{ inputs.dry-run }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           ref: main
           token: ${{ secrets.PAT }}

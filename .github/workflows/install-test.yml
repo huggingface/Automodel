@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   pre-flight:
-    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_cicd_preflight.yml@v0.64.2
+    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_cicd_preflight.yml@d211550f7cfe04e657ed568ce28bef620457b94f  # v0.64.2
 
   pip-test:
     runs-on: ${{ matrix.arch }}
@@ -29,10 +29,10 @@ jobs:
         python-version: ["3.10", "3.11", "3.12"]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -45,7 +45,7 @@ jobs:
           pip install "."
 
       - name: Checkout check-imports
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: NVIDIA-NeMo/FW-CI-templates
           ref: v0.39.0
@@ -73,10 +73,10 @@ jobs:
         python-version: ["3.12"]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -90,7 +90,7 @@ jobs:
           python -m pip install --upgrade pip
 
       - name: Set up UV
-        uses: astral-sh/setup-uv@v1
+        uses: astral-sh/setup-uv@162b8acf397cb069dec09a3f5a9847cf71cfa46a  # v1.0.7
         with:
           version: 0.9.26
 
@@ -123,7 +123,7 @@ jobs:
           uv pip install --no-deps -e .
 
       - name: Checkout check-imports
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: NVIDIA-NeMo/FW-CI-templates
           ref: v0.39.0
@@ -154,7 +154,7 @@ jobs:
       EXTRA: ${{ matrix.extra-groups != '' && format('[{0}]', matrix.extra-groups) || '' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Install automodel${{ matrix.extra-groups != '' && format('[{0}]', matrix.extra-groups) || '' }}
         shell: bash -x -e -u -o pipefail {0}
@@ -179,7 +179,7 @@ jobs:
           pip install ${PIP_ARGS[@]} .$EXTRA
 
       - name: Checkout check-imports
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: NVIDIA-NeMo/FW-CI-templates
           ref: v0.39.0
@@ -205,10 +205,10 @@ jobs:
         arch: ["${{ vars.LINT_AND_INSTALL_TEST_RUNNER || 'ubuntu-latest' }}", "macos-latest"]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Set up UV
-        uses: astral-sh/setup-uv@v1
+        uses: astral-sh/setup-uv@162b8acf397cb069dec09a3f5a9847cf71cfa46a  # v1.0.7
         with:
           version: 0.9.26
 
@@ -232,7 +232,7 @@ jobs:
           uv pip install --no-deps -e .
 
       - name: Checkout check-imports
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: NVIDIA-NeMo/FW-CI-templates
           ref: v0.39.0
@@ -257,7 +257,7 @@ jobs:
       && !cancelled()
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Get workflow result
         id: result
