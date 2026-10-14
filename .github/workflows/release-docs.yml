@@ -79,7 +79,7 @@ on:
 
 jobs:
   build-docs:
-    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_build_docs.yml@v0.67.0
+    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_build_docs.yml@3ab507cd035df3ae37cce8808ed3210ff6e7062b  # v0.67.0
     with:
       ref: ${{ inputs.github-ref }}
 
@@ -90,7 +90,7 @@ jobs:
       DRY_RUN: ${{ inputs.dry-run }}
       NOTIFY_EMAILS: ${{ inputs.notify-emails || 'akoumparouli@nvidia.com' }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           repository: NVIDIA-NeMo/FW-CI-templates
           ref: v0.74.0

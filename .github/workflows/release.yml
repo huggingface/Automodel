@@ -70,7 +70,7 @@ permissions:
 
 jobs:
   release:
-    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_release_library.yml@v0.76.1
+    uses: NVIDIA-NeMo/FW-CI-templates/.github/workflows/_release_library.yml@ef7fe83708c43171783e3d02fa28fede65314834  # v0.76.1
     with:
       release-ref: ${{ inputs.release-ref || github.sha }}
       python-package: nemo_automodel
